@@ -20,7 +20,7 @@ response = proxy_request.get("https://example.com")
 
 Proxpy is still being developed.
 
-This tool is based on the free proxy server list of to https://spys.one that you can find at https://spys.me/proxy.txt
+This tool is based on the free proxy server list of https://spys.one that you can find at https://spys.me/proxy.txt
 
 Therefore, thanks and kudos to https://spys.one
 
