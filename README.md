@@ -24,4 +24,4 @@ This tool is based on the free proxy server list of to https://spys.one that you
 
 Therefore, thanks and kudos to https://spys.one
 
-<sub>Neither by the author nor by spys.one take any liability or responsibility for proper use, therefore, use this tool and those servers with care and common sense.</sub>
+<sub>Neither the author nor https://spys.one take any liability or responsibility for proper use. Hence, use this tool and those servers with care and common sense.</sub>
