@@ -56,13 +56,13 @@ class ProxyRequest(object):
     def get(self, url, headers=None, throttle=None):
         idx = self.get_idx()
         proxies = {"socks": f"socks5://{self.ip_list[idx]}"}
-        session = requests.session()
-        session.proxies.update(proxies)
-        try:
-            response = session.get(url, headers=headers, proxies=proxies)
-        except:
-            response = requests.Response()
-            response.status_code = 403
+        with requests.Session() as session:
+            session.proxies.update(proxies)
+            try:
+                response = session.get(url, headers=headers, proxies=proxies)
+            except:
+                response = requests.Response()
+                response.status_code = 403
 
         if throttle:
             time.sleep(random.uniform(throttle * 0.8, throttle * 1.2))
