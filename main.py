@@ -44,7 +44,7 @@ class ProxyRequest(object):
         self.lastidx = []
         self.range = list(range(0, len(self.ip_list)))
         self.last_update = time.time()
-        # self.update = self.update_ip_list()
+        self.update = self.update_ip_list()
 
     def get_idx(self):
         # When list of indices is empty, create a new one
@@ -57,8 +57,10 @@ class ProxyRequest(object):
     def get(self, url, headers=None, throttle=None):
         idx = self.get_idx()
         proxies = {"socks": f"socks5://{self.ip_list[idx]}"}
+        session = requests.session()
+        session.proxies.update(proxies)
         try:
-            response = requests.get(url, headers=headers, proxies=proxies)
+            response = session.get(url, headers=headers, proxies=proxies)
         except:
             response = requests.Response()
             response.status_code = 403
