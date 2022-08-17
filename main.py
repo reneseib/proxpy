@@ -38,7 +38,6 @@ class ProxyRequest(object):
                 # Go to sleep to not check every microsecond
                 time.sleep(60)
 
-    # comment
     def __init__(self):
         self.ip_list = ProxyRequest.generate_ip_list()
         self.lastidx = []
